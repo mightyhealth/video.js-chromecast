@@ -1,3 +1,4 @@
+// use the videojs core version with VHS
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -6,9 +7,9 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _videoJs = require('video.js');
+var _videoJsDistAltVideoCore = require('video.js/dist/alt/video.core');
 
-var _videoJs2 = _interopRequireDefault(_videoJs);
+var _videoJsDistAltVideoCore2 = _interopRequireDefault(_videoJsDistAltVideoCore);
 
 var _videojsChromecast = require('./videojs-chromecast');
 
@@ -25,7 +26,7 @@ var plugin = function plugin(options) {
   player.addChild('Chromecast', options);
 };
 
-var registerPlugin = _videoJs2['default'].registerPlugin || _videoJs2['default'].plugin;
+var registerPlugin = _videoJsDistAltVideoCore2['default'].registerPlugin || _videoJsDistAltVideoCore2['default'].plugin;
 
 registerPlugin('chromecast', plugin);
 

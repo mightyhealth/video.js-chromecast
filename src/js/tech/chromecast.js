@@ -2,7 +2,7 @@
  * @file chromecast.js
  * Chromecast Media Controller - Wrapper for HTML5 Media API
  */
-import videojs from 'video.js';
+import videojs from 'video.js/dist/alt/video.core';
 
 const Component = videojs.getComponent('Component');
 const Tech = videojs.getComponent('Tech');
@@ -321,6 +321,17 @@ class Chromecast extends Tech {
         super.dispose(this);
     }
 
+    seeking() {
+       return false;
+    }
+
+    seekable() {
+       return false;
+    }
+
+    playbackRate() {
+       return 1;
+    }
 }
 
 Chromecast.prototype.paused_ = false;

@@ -1,6 +1,6 @@
 {
-  "name": "videojs-chromecast",
-  "version": "2.0.8",
+  "name": "@leochen1216/videojs-chromecast",
+  "version": "3.0.2",
   "description": "Chromecast plugin for videojs",
   "main": "es5/js/plugin.js",
   "scripts": {
@@ -48,7 +48,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/benjipott/video.js-chromecast"
+    "url": "git+https://github.com/leochen1216/video.js-chromecast.git"
   },
   "files": [
     "CONTRIBUTING.md",
@@ -127,6 +127,14 @@
   "dependencies": {
     "global": "^4.3.0",
     "object.assign": "^4.0.3",
-    "video.js": "^5.0.0"
+    "video.js": "^7.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/leochen1216/video.js-chromecast/issues"
+  },
+  "homepage": "https://github.com/leochen1216/video.js-chromecast#readme",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
   }
 }

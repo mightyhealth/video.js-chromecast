@@ -1,7 +1,7 @@
 /**
  * @file chromecast-button.js
  */
-import videojs from 'video.js';
+import videojs from 'video.js/dist/alt/video.core';
 
 const Component = videojs.getComponent('Component');
 const ControlBar = videojs.getComponent('ControlBar');

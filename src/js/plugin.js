@@ -1,4 +1,5 @@
-import videojs from 'video.js';
+// use the videojs core version with VHS
+import videojs from 'video.js/dist/alt/video.core';
 import Chromecast from './videojs-chromecast';
 
 /**

@@ -4,7 +4,7 @@
  * Licensed under the Apache-2.0 license.
  * @file videojs-chromecast.js
  **/
-import videojs from 'video.js';
+import videojs from 'video.js/dist/alt/video.core';
 import chromecastButton from './component/control-bar/chromecast-button';
 import chromecastTech from './tech/chromecast';
 

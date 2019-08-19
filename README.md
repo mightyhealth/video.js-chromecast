@@ -2,7 +2,9 @@
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/pools/c/81gnn8kAtv)
 
-# Chromecast Plugin for video.js 5.*
+# Chromecast Plugin for video.js 7.*
+This is based on [videojs-chrome](https://github.com/benjipott/video.js-chromecast). There are minor changes made to support video.js 7 core version without [VHS](https://github.com/videojs/http-streaming).
+
 ![Alt text](https://cloud.githubusercontent.com/assets/3854951/22416418/c6ef4b6a-e6ce-11e6-95dd-e8f04719d68f.png "Sample image")
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
