@@ -18,9 +18,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _videoJsDistAltVideoCore = require('video.js/dist/alt/video.core');
+var _videoJs = require('video.js');
 
-var _videoJsDistAltVideoCore2 = _interopRequireDefault(_videoJsDistAltVideoCore);
+var _videoJs2 = _interopRequireDefault(_videoJs);
 
 var _componentControlBarChromecastButton = require('./component/control-bar/chromecast-button');
 
@@ -30,7 +30,7 @@ var _techChromecast = require('./tech/chromecast');
 
 var _techChromecast2 = _interopRequireDefault(_techChromecast);
 
-var Component = _videoJsDistAltVideoCore2['default'].getComponent('Component');
+var Component = _videoJs2['default'].getComponent('Component');
 
 /**
  * Initialize the plugin.
@@ -52,21 +52,21 @@ var Chromecast = (function (_Component) {
 Chromecast.prototype.options_ = {};
 
 // register the plugin
-_videoJsDistAltVideoCore2['default'].options.children.push('chromecast');
+_videoJs2['default'].options.children.push('chromecast');
 
-_videoJsDistAltVideoCore2['default'].addLanguage('en', {
+_videoJs2['default'].addLanguage('en', {
     'CASTING TO': 'WIEDERGABE AUF'
 });
 
-_videoJsDistAltVideoCore2['default'].addLanguage('de', {
+_videoJs2['default'].addLanguage('de', {
     'CASTING TO': 'WIEDERGABE AUF'
 });
 
-_videoJsDistAltVideoCore2['default'].addLanguage('it', {
+_videoJs2['default'].addLanguage('it', {
     'CASTING TO': 'PLAYBACK SU'
 });
 
-_videoJsDistAltVideoCore2['default'].addLanguage('fr', {
+_videoJs2['default'].addLanguage('fr', {
     'CASTING TO': 'CAST EN COURS SUR'
 });
 

@@ -17,13 +17,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _videoJsDistAltVideoCore = require('video.js/dist/alt/video.core');
+var _videoJs = require('video.js');
 
-var _videoJsDistAltVideoCore2 = _interopRequireDefault(_videoJsDistAltVideoCore);
+var _videoJs2 = _interopRequireDefault(_videoJs);
 
-var Component = _videoJsDistAltVideoCore2['default'].getComponent('Component');
-var ControlBar = _videoJsDistAltVideoCore2['default'].getComponent('ControlBar');
-var Button = _videoJsDistAltVideoCore2['default'].getComponent('Button');
+var Component = _videoJs2['default'].getComponent('Component');
+var ControlBar = _videoJs2['default'].getComponent('ControlBar');
+var Button = _videoJs2['default'].getComponent('Button');
 var hasReceiver = false;
 
 /**
@@ -76,21 +76,21 @@ var ChromeCastButton = (function (_Button) {
             var sessionRequest = undefined;
 
             var user_agent = window.navigator && window.navigator.userAgent || '';
-            var is_chrome = _videoJsDistAltVideoCore2['default'].browser.IS_CHROME || /CriOS/i.test(user_agent);
-            if (!is_chrome || _videoJsDistAltVideoCore2['default'].browser.IS_EDGE || typeof chrome === 'undefined') {
+            var is_chrome = _videoJs2['default'].browser.IS_CHROME || /CriOS/i.test(user_agent);
+            if (!is_chrome || _videoJs2['default'].browser.IS_EDGE || typeof chrome === 'undefined') {
                 return;
             }
             if (!chrome.cast || !chrome.cast.isAvailable) {
-                _videoJsDistAltVideoCore2['default'].log('Cast APIs not available');
+                _videoJs2['default'].log('Cast APIs not available');
                 if (this.tryingReconnect < 10) {
                     this.setTimeout(this.initializeApi, 1000);
                     ++this.tryingReconnect;
                 }
-                _videoJsDistAltVideoCore2['default'].log('Cast APIs not available. Max reconnect attempt');
+                _videoJs2['default'].log('Cast APIs not available. Max reconnect attempt');
                 return;
             }
 
-            _videoJsDistAltVideoCore2['default'].log('Cast APIs are available');
+            _videoJs2['default'].log('Cast APIs are available');
             appId = this.options_.appId || chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID;
             sessionRequest = new chrome.cast.SessionRequest(appId);
             apiConfig = new chrome.cast.ApiConfig(sessionRequest, this.sessionJoinedListener.bind(this), this.receiverListener.bind(this));
@@ -123,7 +123,7 @@ var ChromeCastButton = (function (_Button) {
                     this.player_.error(error);
                     break;
             }
-            return _videoJsDistAltVideoCore2['default'].log('Cast Error: ' + JSON.stringify(_castError));
+            return _videoJs2['default'].log('Cast Error: ' + JSON.stringify(_castError));
         }
     }, {
         key: 'onInitSuccess',
@@ -158,11 +158,11 @@ var ChromeCastButton = (function (_Button) {
     }, {
         key: 'doLaunch',
         value: function doLaunch() {
-            _videoJsDistAltVideoCore2['default'].log('Cast video: ' + this.player_.cache_.src);
+            _videoJs2['default'].log('Cast video: ' + this.player_.cache_.src);
             if (this.apiInitialized) {
                 return chrome.cast.requestSession(this.onSessionSuccess.bind(this), this.castError.bind(this));
             } else {
-                return _videoJsDistAltVideoCore2['default'].log('Session not initialized');
+                return _videoJs2['default'].log('Session not initialized');
             }
         }
     }, {
@@ -179,7 +179,7 @@ var ChromeCastButton = (function (_Button) {
             var source = this.player_.cache_.src;
             var type = this.player_.currentType();
 
-            _videoJsDistAltVideoCore2['default'].log('Session initialized: ' + session.sessionId + ' source : ' + source + ' type : ' + type);
+            _videoJs2['default'].log('Session initialized: ' + session.sessionId + ' source : ' + source + ' type : ' + type);
 
             mediaInfo = new chrome.cast.media.MediaInfo(source, type);
             mediaInfo.metadata = new chrome.cast.media.GenericMediaMetadata();
@@ -242,7 +242,7 @@ var ChromeCastButton = (function (_Button) {
                     }
                 }
             } catch (e) {
-                _videoJsDistAltVideoCore2['default'].log('get player audioTracks fail' + e);
+                _videoJs2['default'].log('get player audioTracks fail' + e);
             }
 
             if (tracks.length) {

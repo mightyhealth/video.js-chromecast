@@ -1,6 +1,6 @@
 {
   "name": "@leochen1216/videojs-chromecast",
-  "version": "3.0.2",
+  "version": "2.0.0",
   "description": "Chromecast plugin for videojs",
   "main": "es5/js/plugin.js",
   "scripts": {
@@ -127,7 +127,7 @@
   "dependencies": {
     "global": "^4.3.0",
     "object.assign": "^4.0.3",
-    "video.js": "^7.0.0"
+    "video.js": "^6.0.0"
   },
   "bugs": {
     "url": "https://github.com/leochen1216/video.js-chromecast/issues"

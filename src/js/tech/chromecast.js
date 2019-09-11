@@ -2,7 +2,7 @@
  * @file chromecast.js
  * Chromecast Media Controller - Wrapper for HTML5 Media API
  */
-import videojs from 'video.js/dist/alt/video.core';
+import videojs from 'video.js';
 
 const Component = videojs.getComponent('Component');
 const Tech = videojs.getComponent('Tech');

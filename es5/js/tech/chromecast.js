@@ -18,12 +18,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _videoJsDistAltVideoCore = require('video.js/dist/alt/video.core');
+var _videoJs = require('video.js');
 
-var _videoJsDistAltVideoCore2 = _interopRequireDefault(_videoJsDistAltVideoCore);
+var _videoJs2 = _interopRequireDefault(_videoJs);
 
-var Component = _videoJsDistAltVideoCore2['default'].getComponent('Component');
-var Tech = _videoJsDistAltVideoCore2['default'].getComponent('Tech');
+var Component = _videoJs2['default'].getComponent('Component');
+var Tech = _videoJs2['default'].getComponent('Tech');
 
 /**
  * Chromecast Media Controller - Wrapper for HTML5 Media API
@@ -87,7 +87,7 @@ var Chromecast = (function (_Tech) {
                 })();
             }
         } catch (e) {
-            _videoJsDistAltVideoCore2['default'].log('get player audioTracks fail' + e);
+            _videoJs2['default'].log('get player audioTracks fail' + e);
         }
 
         try {
@@ -103,7 +103,7 @@ var Chromecast = (function (_Tech) {
                 })();
             }
         } catch (e) {
-            _videoJsDistAltVideoCore2['default'].log('get player videoTracks fail' + e);
+            _videoJs2['default'].log('get player videoTracks fail' + e);
         }
 
         this.update();
@@ -113,7 +113,7 @@ var Chromecast = (function (_Tech) {
     _createClass(Chromecast, [{
         key: 'createEl',
         value: function createEl() {
-            var el = _videoJsDistAltVideoCore2['default'].createEl('div', {
+            var el = _videoJs2['default'].createEl('div', {
                 id: this.options_.techId,
                 className: 'vjs-tech vjs-tech-chromecast'
             });
@@ -236,17 +236,17 @@ var Chromecast = (function (_Tech) {
     }, {
         key: 'onTrackSuccess',
         value: function onTrackSuccess() {
-            return _videoJsDistAltVideoCore2['default'].log('track added');
+            return _videoJs2['default'].log('track added');
         }
     }, {
         key: 'onTrackError',
         value: function onTrackError(e) {
-            return _videoJsDistAltVideoCore2['default'].log('Cast track Error: ' + JSON.stringify(e));
+            return _videoJs2['default'].log('Cast track Error: ' + JSON.stringify(e));
         }
     }, {
         key: 'castError',
         value: function castError(e) {
-            return _videoJsDistAltVideoCore2['default'].log('Cast Error: ' + JSON.stringify(e));
+            return _videoJs2['default'].log('Cast Error: ' + JSON.stringify(e));
         }
     }, {
         key: 'play',
@@ -306,7 +306,7 @@ var Chromecast = (function (_Tech) {
     }, {
         key: 'onSeekSuccess',
         value: function onSeekSuccess(position) {
-            _videoJsDistAltVideoCore2['default'].log('seek success' + position);
+            _videoJs2['default'].log('seek success' + position);
         }
     }, {
         key: 'volume',
@@ -349,7 +349,7 @@ var Chromecast = (function (_Tech) {
     }, {
         key: 'mediaCommandSuccessCallback',
         value: function mediaCommandSuccessCallback(information) {
-            _videoJsDistAltVideoCore2['default'].log(information);
+            _videoJs2['default'].log(information);
         }
     }, {
         key: 'muted',
@@ -541,7 +541,7 @@ Chromecast.prototype['featuresNativeAudioTracks'] = true;
  */
 Chromecast.prototype['featuresNativeVideoTracks'] = false;
 
-_videoJsDistAltVideoCore2['default'].options.chromecast = {};
+_videoJs2['default'].options.chromecast = {};
 
 Tech.registerTech('Chromecast', Chromecast);
 
