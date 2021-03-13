@@ -1,17 +1,17 @@
 // use the videojs core version with VHS
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _videoJsDistAltVideoCore = require('video.js/dist/alt/video.core');
+var _videoJs = require("video.js");
 
-var _videoJsDistAltVideoCore2 = _interopRequireDefault(_videoJsDistAltVideoCore);
+var _videoJs2 = _interopRequireDefault(_videoJs);
 
-var _videojsChromecast = require('./videojs-chromecast');
+var _videojsChromecast = require("./videojs-chromecast");
 
 var _videojsChromecast2 = _interopRequireDefault(_videojsChromecast);
 
@@ -23,12 +23,12 @@ var _videojsChromecast2 = _interopRequireDefault(_videojsChromecast);
  */
 var plugin = function plugin(options) {
   var player = this;
-  player.addChild('Chromecast', options);
+  player.addChild("Chromecast", options);
 };
 
-var registerPlugin = _videoJsDistAltVideoCore2['default'].registerPlugin || _videoJsDistAltVideoCore2['default'].plugin;
+var registerPlugin = _videoJs2["default"].registerPlugin || _videoJs2["default"].plugin;
 
-registerPlugin('chromecast', plugin);
+registerPlugin("chromecast", plugin);
 
-exports['default'] = plugin;
-module.exports = exports['default'];
+exports["default"] = plugin;
+module.exports = exports["default"];

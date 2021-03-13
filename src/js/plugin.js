@@ -1,6 +1,6 @@
 // use the videojs core version with VHS
-import videojs from 'video.js/dist/alt/video.core';
-import Chromecast from './videojs-chromecast';
+import videojs from "video.js";
+import Chromecast from "./videojs-chromecast";
 
 /**
  * The video.js playlist plugin. Invokes the playlist-maker to create a
@@ -9,12 +9,12 @@ import Chromecast from './videojs-chromecast';
  * @param {Array} list
  */
 const plugin = function (options) {
-    let player = this
-    player.addChild('Chromecast', options)
+  let player = this;
+  player.addChild("Chromecast", options);
 };
 
 var registerPlugin = videojs.registerPlugin || videojs.plugin;
 
-registerPlugin('chromecast', plugin);
+registerPlugin("chromecast", plugin);
 
 export default plugin;

@@ -4,45 +4,42 @@
  * Licensed under the Apache-2.0 license.
  * @file videojs-chromecast.js
  **/
-import videojs from 'video.js/dist/alt/video.core';
-import chromecastButton from './component/control-bar/chromecast-button';
-import chromecastTech from './tech/chromecast';
+import videojs from "video.js";
+import chromecastButton from "./component/control-bar/chromecast-button";
+import chromecastTech from "./tech/chromecast";
 
-let Component = videojs.getComponent('Component');
+let Component = videojs.getComponent("Component");
 
 /**
  * Initialize the plugin.
  * @param options (optional) {object} configuration for the plugin
  */
 class Chromecast extends Component {
-    constructor (player, options) {
-        super(player, options);
-    }
+  constructor(player, options) {
+    super(player, options);
+  }
 }
-
 
 Chromecast.prototype.options_ = {};
 
-
 // register the plugin
-videojs.options.children.push('chromecast');
+videojs.options.children.push("chromecast");
 
-
-videojs.addLanguage('en', {
-    'CASTING TO': 'WIEDERGABE AUF'
+videojs.addLanguage("en", {
+  "CASTING TO": "WIEDERGABE AUF",
 });
 
-videojs.addLanguage('de', {
-    'CASTING TO': 'WIEDERGABE AUF'
+videojs.addLanguage("de", {
+  "CASTING TO": "WIEDERGABE AUF",
 });
 
-videojs.addLanguage('it', {
-    'CASTING TO': 'PLAYBACK SU'
+videojs.addLanguage("it", {
+  "CASTING TO": "PLAYBACK SU",
 });
 
-videojs.addLanguage('fr', {
-    'CASTING TO': 'CAST EN COURS SUR'
+videojs.addLanguage("fr", {
+  "CASTING TO": "CAST EN COURS SUR",
 });
 
-Component.registerComponent('Chromecast', Chromecast);
+Component.registerComponent("Chromecast", Chromecast);
 export default Chromecast;
